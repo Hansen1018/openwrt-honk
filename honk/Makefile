@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=honk
-PKG_VERSION:=2026.11.09.1
+PKG_VERSION:=2026.11.12
 PKG_RELEASE:=1
 
 # Pinned honk-core revision (upstream daeuniverse/honk main), cross-compiled by
@@ -14,10 +14,10 @@ PKG_RELEASE:=1
 # assets behind CORE_COMMIT, so a plain feed build downloads and verifies them
 # without any generated file. A staged run may still override them through
 # honk/generated-stage.mk, which is generated and never committed.
-CORE_COMMIT:=64848881b7304e250e7a25422f4f1d86a5975eca
+CORE_COMMIT:=a09d3bfa272f3670d6606373452be41606bdc29e
 
 # Immutable source asset tag holding this pin's core archives.
-HONK_SOURCE_TAG?=source-42576464746
+HONK_SOURCE_TAG?=source-43175714621
 HONK_SOURCE_URL?=https://github.com/kenzok8/openwrt-honk/releases/download/$(HONK_SOURCE_TAG)
 
 -include $(CURDIR)/generated-stage.mk
@@ -25,9 +25,9 @@ HONK_SOURCE_URL?=https://github.com/kenzok8/openwrt-honk/releases/download/$(HON
 HONK_ASSET_X86_64?=honk-core-$(CORE_COMMIT)-x86_64.tar.gz
 HONK_ASSET_AARCH64?=honk-core-$(CORE_COMMIT)-aarch64.tar.gz
 HONK_ASSET_ARMV7?=honk-core-$(CORE_COMMIT)-armv7.tar.gz
-HONK_HASH_X86_64?=d8b779a60fbe4965d323bcab187924f5c28745509318bf54c853cbd71d9e540a
-HONK_HASH_AARCH64?=27df7fbab0e3fb15cb3171d1f74d387f815ecc7c53f96256af11dcc6618da047
-HONK_HASH_ARMV7?=44cbb9a75054c14b97f98849a70aa32fd87b9d4ef7116c6e790315d0adee7766
+HONK_HASH_X86_64?=fe494f1463908a49acb39eae0ea68eb495d16e86afc2984d3626e0605f040718
+HONK_HASH_AARCH64?=e7725c764497200fa64de8d77e95da20880291c3fc4225c04fc21938acd3e508
+HONK_HASH_ARMV7?=d4a03d7ba9685f746b8f0f72ed698712424bcd38e56fbd75b12933281bf7b80a
 
 # ARCH_PACKAGES is the package arch (e.g. arm_cortex-a7_neon-vfpv4);
 # ARCH is the CPU arch (x86_64/aarch64/arm) and coincides for 64-bit.
